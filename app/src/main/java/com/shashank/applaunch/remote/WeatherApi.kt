@@ -12,6 +12,7 @@ interface WeatherApi {
    suspend fun getWeather(
         @Query("lat")las:Double,
         @Query("lon")lon:Double,
+        @Query("units")uinits:String="imperial",
         @Query("appid")appid:String=appId
    ):Response<Weather>
 
