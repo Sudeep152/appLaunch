@@ -1,13 +1,13 @@
 package com.shashank.todoapp
 
-import android.app.Application
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.shashank.applaunch.Entity.User
 import com.shashank.applaunch.R
+import com.shashank.applaunch.screen.HomeScreen
 import kotlinx.android.synthetic.main.single_user.view.*
 
 class UserAdapter() : RecyclerView.Adapter<UserAdapter.viewHolder>() {
@@ -29,6 +29,11 @@ class UserAdapter() : RecyclerView.Adapter<UserAdapter.viewHolder>() {
         holder.Vdate.text=current.email
 
 
+
+    holder.itemView.setOnClickListener {
+        it.findNavController().navigate(R.id.action_homeScreen_to_weatherScreen)
+    }
+
     }
 
     fun update(newTod:List<User>){
@@ -47,11 +52,17 @@ class UserAdapter() : RecyclerView.Adapter<UserAdapter.viewHolder>() {
         val Vsubtitle =itemView.subTitleTxt
         val Vdate =itemView.datatxt
 
+
+
+
+
     }
 
 
     fun getNodeAt( position: Int):User{
         return list.get(position)
     }
+
+
 
 }

@@ -13,16 +13,16 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.shashank.applaunch.Entity.User
 import com.shashank.applaunch.R
 import com.shashank.applaunch.viewmodel.UserViewModel
 import com.shashank.todoapp.UserAdapter
 import kotlinx.android.synthetic.main.home_screen.*
 
 
-class HomeScreen : Fragment(R.layout.home_screen) {
+class HomeScreen : Fragment(R.layout.home_screen)  {
 
     lateinit var viewMmodel: UserViewModel
+
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

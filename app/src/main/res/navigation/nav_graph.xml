@@ -27,9 +27,20 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             app:destination="@id/addUserScreen" />
+        <action
+            android:id="@+id/action_homeScreen_to_weatherScreen"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:destination="@id/weatherScreen" />
     </fragment>
     <fragment
         android:id="@+id/addUserScreen"
         android:name="com.shashank.applaunch.screen.AddUserScreen"
         android:label="AddUserScreen" />
+    <fragment
+        android:id="@+id/weatherScreen"
+        android:name="com.shashank.applaunch.screen.WeatherScreen"
+        android:label="WeatherScreen" />
 </navigation>
