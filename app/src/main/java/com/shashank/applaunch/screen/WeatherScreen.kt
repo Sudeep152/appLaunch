@@ -31,10 +31,14 @@ class WeatherScreen :Fragment(R.layout.weather_screen){
 
         viewModel.weatherResponse.observe(requireActivity()) {
 
-            tvTemperature.text = it.current.temp.toInt().toString()
-            tvDescription.text = it.current.weather[it.current.uvi].description.toString()
-            tvWind.text = it.current.wind_speed.toString()
-            tvHumidity.text = it.current.humidity.toString()
+
+                tvTemperature.text = it.current.temp.toString()
+                tvWind.text = it.current.wind_speed.toString()
+            tvDescription.text= it.current.weather[it.current.uvi].description.toString()
+                tvHumidity.text = it.current.humidity.toString()
+
+
+
 
 
         }

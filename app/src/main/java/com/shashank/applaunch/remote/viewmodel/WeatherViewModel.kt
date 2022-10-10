@@ -25,11 +25,18 @@ class WeatherViewModel(val repository: WeatherRepository):ViewModel() {
     private fun getWeather() =viewModelScope.launch {
        repository.getWeather(lat,lon).let {
                response ->
-           if (response.isSuccessful) {
-               _response.postValue(response.body())
-           } else {
-               Log.d("tag", "getWeather Error: ${response.code()}")
+
+           try {
+               if (response.isSuccessful) {
+                   _response.postValue(response.body())
+               } else {
+                   Log.d("tag", "getWeather Error: ${response.code()}")
+               }
+
+           }catch (e:Exception){
+               Log.d("TAG", e.localizedMessage.toString())
            }
+
        }
     }
 }

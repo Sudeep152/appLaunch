@@ -1,5 +1,6 @@
 package com.shashank.applaunch.remote.model
 
+
 data class Current(
     val clouds: Int,
     val dew_point: Double,
