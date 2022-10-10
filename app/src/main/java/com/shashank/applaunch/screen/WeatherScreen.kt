@@ -46,7 +46,7 @@ class WeatherScreen : Fragment(R.layout.weather_screen) {
 
 
 
-      findNavController().popBackStack(R.id.action_weatherScreen_to_loginScreen,true)
+
 
     }
 
