@@ -17,30 +17,30 @@ import com.shashank.applaunch.remote.viewmodel.WeathervViewModelFactory
 import com.shashank.applaunch.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.weather_screen.*
 
-class WeatherScreen :Fragment(R.layout.weather_screen){
+class WeatherScreen : Fragment(R.layout.weather_screen) {
 
-    lateinit var viewModel :WeatherViewModel
+    lateinit var viewModel: WeatherViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val retrofitService = client.api
         val mainRepository = WeatherRepository(retrofitService)
 
 
-        viewModel = ViewModelProvider(this, WeathervViewModelFactory(mainRepository)).get(WeatherViewModel::class.java)
+        viewModel = ViewModelProvider(this,
+            WeathervViewModelFactory(mainRepository)).get(WeatherViewModel::class.java)
 
 
         viewModel.weatherResponse.observe(requireActivity()) {
 
 
-                tvTemperature.text = it.current.temp.toString()
-                tvWind.text = it.current.wind_speed.toString()
-            tvDescription.text= it.current.weather[it.current.uvi].description.toString()
-                tvHumidity.text = it.current.humidity.toString()
-
-
-
+            tvTemperature.text = it.current.temp.toString()
+            tvWind.text = it.current.wind_speed.toString()
+            tvDescription.text = it.current.weather[it.current.uvi].description.toString()
+            tvHumidity.text = it.current.humidity.toString()+"%"
 
 
         }
+
     }
+
 }
