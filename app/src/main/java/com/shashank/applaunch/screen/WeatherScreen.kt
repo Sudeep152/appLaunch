@@ -1,5 +1,6 @@
 package com.shashank.applaunch.screen
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -8,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
 import com.shashank.applaunch.R
 import com.shashank.applaunch.remote.WeatherApi
 import com.shashank.applaunch.remote.client
@@ -20,6 +22,7 @@ import kotlinx.android.synthetic.main.weather_screen.*
 class WeatherScreen : Fragment(R.layout.weather_screen) {
 
     lateinit var viewModel: WeatherViewModel
+    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val retrofitService = client.api
@@ -40,6 +43,10 @@ class WeatherScreen : Fragment(R.layout.weather_screen) {
 
 
         }
+
+
+
+      findNavController().popBackStack(R.id.action_weatherScreen_to_loginScreen,true)
 
     }
 

@@ -42,5 +42,9 @@
     <fragment
         android:id="@+id/weatherScreen"
         android:name="com.shashank.applaunch.screen.WeatherScreen"
-        android:label="WeatherScreen" />
+        android:label="WeatherScreen" >
+        <action
+            android:id="@+id/action_weatherScreen_to_loginScreen"
+            app:destination="@id/loginScreen" />
+    </fragment>
 </navigation>

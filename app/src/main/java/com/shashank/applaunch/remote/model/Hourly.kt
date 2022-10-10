@@ -1,19 +1,19 @@
 package com.shashank.applaunch.remote.model
 
 data class Hourly(
-    val clouds: Int ,
+    val clouds: Float ,
     val dew_point: Double,
-    val dt: Int,
+    val dt: Float,
     val feels_like: Double,
-    val humidity: Int,
+    val humidity: Float,
     val pop: Double,
-    val pressure: Int,
+    val pressure: Float,
     val rain: Rain,
     val temp: Double,
     val uvi: Double ,
-    val visibility: Int,
+    val visibility: Float,
     val weather: List<WeatherX>,
-    val wind_deg: Int,
+    val wind_deg: Float,
     val wind_gust: Double,
     val wind_speed: Double
 )
