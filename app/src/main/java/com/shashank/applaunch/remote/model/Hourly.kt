@@ -1,7 +1,7 @@
 package com.shashank.applaunch.remote.model
 
 data class Hourly(
-    val clouds: Int,
+    val clouds: Int ,
     val dew_point: Double,
     val dt: Int,
     val feels_like: Double,
