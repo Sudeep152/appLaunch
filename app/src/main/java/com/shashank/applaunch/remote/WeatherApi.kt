@@ -1,11 +1,18 @@
 package com.shashank.applaunch.remote
 
+import com.shashank.applaunch.remote.model.Weather
+import com.shashank.applaunch.utils.Const.Companion.appId
+import retrofit2.Response
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface WeatherApi {
 
-    @GET("data/2.5/onecall?lat=12.9082847623315&lon=77.65197822993314&units=imperial&appid=b143bb707b2ee117e62649b358207d3e")
-   suspend fun getWeather(){
+    @GET("data/2.5/onecall")
+   suspend fun getWeather(
+        @Query("lat")las:Double,
+        @Query("lon")lon:Double,
+        @Query("appid")appid:String=appId
+   ):Response<Weather>
 
-   }
 }
